@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Bio - Foodtech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header de la page -->
+  <header>
+    <h1>Restaurant Bio</h1>
+    <p>Produits frais et bio, cultivés localement</p>
+  </header>
+
+  <!-- Section des onglets -->
+  <div class="tabs">
+    <button class="tab-link" onclick="openTab('home')">Accueil</button>
+    <button class="tab-link" onclick="openTab('menu')">Menu</button>
+    <button class="tab-link" onclick="openTab('photos')">Photos</button>
+  </div>
+
+  <!-- Contenu des onglets -->
+  <div id="home" class="tab-content">
+    <h2>Bienvenue au restaurant bio</h2>
+    <p>Découvrez nos plats préparés avec des ingrédients frais et locaux !</p>
+  </div>
+
+  <div id="menu" class="tab-content" style="display:none">
+    <h2>Notre Menu</h2>
+    <div id="menu-content">
+      <!-- Menu par défaut -->
+      <p>Gigot d'agneau façon sud-ouest, avec une purée de topinambour et une pointe de safran.</p>
+    </div>
+    <button onclick="generateMenu()">Marre de ce menu ? Changez-le !</button>
+  </div>
+
+  <div id="photos" class="tab-content" style="display:none">
+    <h2>Photos du restaurant</h2>
+    <div id="gallery" class="gallery" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <img src="photo1.jpg" alt="Photo 1" draggable="true" ondragstart="drag(event)" id="img1">
+      <img src="photo2.jpg" alt="Photo 2" draggable="true" ondragstart="drag(event)" id="img2">
+      <img src="photo3.jpg" alt="Photo 3" draggable="true" ondragstart="drag(event)" id="img3">
+      <img src="photo4.jpg" alt="Photo 4" draggable="true" ondragstart="drag(event)" id="img4">
+    </div>
+  </div>
+
+  <!-- Popup d'exit -->
+  <div id="exit-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <p>Ne partez pas ! Inscrivez-vous à notre newsletter pour découvrir nos menus frais et bio !</p>
+      <!-- Formulaire d'inscription -->
+      <form>
+        <input type="email" placeholder="Votre email">
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
